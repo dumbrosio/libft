@@ -52,5 +52,5 @@ Mkfile.old
 dkms.conf
 
 # Misc
-.DS Store
+.DS_Store
 .vscode
