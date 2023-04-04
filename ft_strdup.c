@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vd-ambro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/03 17:11:17 by vd-ambro          #+#    #+#             */
-/*   Updated: 2023/04/04 18:29:22 by vd-ambro         ###   ########.fr       */
+/*   Created: 2023/04/04 17:38:19 by vd-ambro          #+#    #+#             */
+/*   Updated: 2023/04/04 19:21:38 by vd-ambro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, const char *src, size_t dstsize)
+char	*ft_strdup(const char *s1)
 {
-	size_t	i;
-	size_t	j;
+	int		s1_len;
+	char	*dup;
 
-	if (!src && !dest)
-		return (0);
-	if (dstsize == 0)
-		return (ft_strlen(src));
-	i = 0;
-	j = 0;
-	while (dest[i] && i < dstsize)
-		i++;
-	while ((i + j + 1) < dstsize && src[j])
-	{
-		dest[i + j] = src[j];
-		j++;
-	}
-	if (i != dstsize)
-		dest[i + j] = '\0';
-	return (i + ft_strlen(src));
+	s1_len = ft_strlen(s1);
+	dup = (char *)malloc((s1_len + 1) * sizeof(char));
+	if (!dup)
+		return (NULL);
+	dup[s1_len] = 0;
+	while (--s1_len >= 0)
+		dup[s1_len] = s1[s1_len];
+	return (dup);
 }

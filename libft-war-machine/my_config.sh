@@ -5,7 +5,7 @@
 ###################################
 
 #Edit the next line with the path of your libft project.
-PATH_LIBFT="/Users/vd-ambro/Desktop/workspace/libft"
+PATH_LIBFT="/Users/vd-ambro/my-repos/LIBFT-workspace/libft"
 
 #If you use a relative path, don't put double quotes.
 #For example :
