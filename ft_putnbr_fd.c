@@ -1,19 +1,34 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vd-ambro <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/06 15:00:12 by vd-ambro          #+#    #+#             */
+/*   Updated: 2023/04/06 16:00:41 by vd-ambro         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	long	nl;
-
-	nl = n;
 	if (n < 0)
 	{
+		if (n == -2147483648)
+		{
+			ft_putstr_fd("-2147483648", fd);
+			return ;
+		}
 		ft_putchar_fd('-', fd);
-		nl = -nl;
+		n = -n;
 	}
-	if (nl > 100)
-		ft_putnbr_fd(nl / 10, fd);
-	else if ((nl / 10) > 0)
-		ft_putchar_fd((nl / 10) + '0', fd);
-	ft_putchar_fd((nl % 10) + '0', fd);
+	if (n >= 10)
+	{
+		ft_putnbr_fd((n / 10), fd);
+		ft_putnbr_fd((n % 10), fd);
+	}
+	else
+		ft_putchar_fd((n + '0'), fd);
 }

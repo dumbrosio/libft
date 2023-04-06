@@ -1,13 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vd-ambro <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/06 19:30:13 by vd-ambro          #+#    #+#             */
+/*   Updated: 2023/04/06 19:35:39 by vd-ambro         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
 static int	is_in_set(char const c, char const *set)
 {
-	int	cur;
+	int	i;
 
-	cur = -1;
-	while (set[++cur])
-		if (set[cur] == c)
+	i = -1;
+	while (set[++i])
+		if (set[i] == c)
 			return (1);
 	return (0);
 }
