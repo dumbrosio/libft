@@ -6,7 +6,7 @@
 /*   By: vd-ambro <vd-ambro@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 19:46:55 by vd-ambro          #+#    #+#             */
-/*   Updated: 2023/08/09 13:00:56 by vd-ambro         ###   ########.fr       */
+/*   Updated: 2023/10/26 14:28:36 by vd-ambro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,5 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		ft_lstadd_back(&current, new);
 		lst = lst->next;
 	}
+	return (new);
 }

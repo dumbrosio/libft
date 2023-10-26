@@ -1,15 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: vd-ambro <marvin@42.fr>                    +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/04/11 09:10:19 by vd-ambro          #+#    #+#              #
-#    Updated: 2023/04/11 09:10:25 by vd-ambro         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 NAME = libft.a
 
 SRCS = ft_atoi.c \
@@ -45,7 +33,16 @@ SRCS = ft_atoi.c \
 	   ft_strtrim.c \
 	   ft_substr.c \
 	   ft_tolower.c \
-	   ft_toupper.c
+	   ft_toupper.c \
+	   ft_lstadd_back.c \
+	   ft_lstadd_front.c \
+	   ft_lstclear.c \
+	   ft_lstdelone.c \
+	   ft_lstiter.c \
+	   ft_lstlast.c \
+	   ft_lstmap.c \
+	   ft_lstnew.c \
+	   ft_lstsize.c
 
 OBJS = $(SRCS:.c=.o)
 
